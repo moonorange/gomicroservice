@@ -1,4 +1,4 @@
-module query_service
+module github.com/moonorange/gomicroservice/query_service
 
 go 1.22.2
 

@@ -1,4 +1,4 @@
-module bff
+module github.com/moonorange/gomicroservice/bff
 
 go 1.22.2
 

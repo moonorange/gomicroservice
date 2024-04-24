@@ -2,7 +2,7 @@ version: v1
 managed:
   enabled: true
   go_package_prefix:
-    default: github.com/protogo/gen
+    default: github.com/moonorange/gomicroservice/protogo/gen
 plugins:
   - plugin: buf.build/protocolbuffers/go
     out: gen

@@ -1,4 +1,4 @@
-module command_service
+module github.com/moonorange/gomicroservice/command_service
 
 go 1.22.2
 

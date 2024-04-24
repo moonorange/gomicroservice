@@ -1,4 +1,4 @@
-module github.com/protogo
+module github.com/moonorange/gomicroservice/protogo
 
 go 1.22.2
 

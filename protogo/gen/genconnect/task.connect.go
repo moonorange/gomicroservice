@@ -8,7 +8,7 @@ import (
 	connect "connectrpc.com/connect"
 	context "context"
 	errors "errors"
-	gen "github.com/protogo/gen"
+	gen "github.com/moonorange/gomicroservice/protogo/gen"
 	http "net/http"
 	strings "strings"
 )
