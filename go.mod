@@ -1,3 +1,3 @@
-module github.com/gomicroservice
+module github.com/moonorange/gomicroservice
 
 go 1.22.2
