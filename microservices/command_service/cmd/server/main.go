@@ -10,8 +10,8 @@ import (
 	"golang.org/x/net/http2/h2c"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/protogo/gen"
-	"github.com/protogo/gen/genconnect"
+	"github.com/moonorange/gomicroservice/protogo/gen"
+	"github.com/moonorange/gomicroservice/protogo/genconnect"
 )
 
 func main() {

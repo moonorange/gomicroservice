@@ -3,7 +3,7 @@
 package graph
 
 import (
-	"bff/graph/model"
+	"github.com/moonorange/gomicroservice/bff/graph/model"
 	"bytes"
 	"context"
 	"embed"

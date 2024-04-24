@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"connectrpc.com/connect"
-	"github.com/protogo/gen/genconnect"
+	"github.com/moonorange/gomicroservice/protogo/gen/genconnect"
 )
 
 var (

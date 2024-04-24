@@ -5,7 +5,7 @@ go 1.22.2
 require (
 	connectrpc.com/connect v1.16.1
 	github.com/99designs/gqlgen v0.17.45
-	github.com/protogo v0.0.0-00010101000000-000000000000
+	github.com/moonorange/gomicroservice/protogo
 	github.com/vektah/gqlparser/v2 v2.5.11
 )
 
@@ -26,5 +26,3 @@ require (
 	google.golang.org/protobuf v1.33.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-
-replace github.com/protogo => ./proto_go

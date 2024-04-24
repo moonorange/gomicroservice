@@ -6,8 +6,8 @@ import (
 	"strconv"
 
 	"connectrpc.com/connect"
-	"github.com/protogo/gen"
-	"github.com/protogo/gen/genconnect"
+	"github.com/moonorange/gomicroservice/protogo/gen"
+	"github.com/moonorange/gomicroservice/protogo/gen/genconnect"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
