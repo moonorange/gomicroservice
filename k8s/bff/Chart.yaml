@@ -1,6 +1,6 @@
 apiVersion: v2
-name: bff
-description: A Helm chart for Kubernetes
+name: gomicroservices
+description: A Helm chart for Go Microservices
 
 # A chart can be either an 'application' or a 'library' chart.
 #
