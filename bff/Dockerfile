@@ -5,7 +5,7 @@ FROM golang:1.22.2-alpine AS builder
 WORKDIR /app
 
 # Copy the Go module files first to help Docker utilize the Docker layer caching mechanism more efficiently
-COPY go.mod go.sum proto_go/ ./
+COPY go.mod go.sum ./
 
 # Download and install dependencies
 RUN go mod download
