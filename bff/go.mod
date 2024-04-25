@@ -5,7 +5,7 @@ go 1.22.2
 require (
 	connectrpc.com/connect v1.16.1
 	github.com/99designs/gqlgen v0.17.45
-	github.com/moonorange/gomicroservice/protogo
+	github.com/moonorange/gomicroservice/protogo v0.0.0-20240424141032-8ae6af1b12ee
 	github.com/vektah/gqlparser/v2 v2.5.11
 )
 

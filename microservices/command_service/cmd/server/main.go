@@ -11,7 +11,7 @@ import (
 	"golang.org/x/sync/errgroup"
 
 	"github.com/moonorange/gomicroservice/protogo/gen"
-	"github.com/moonorange/gomicroservice/protogo/genconnect"
+	"github.com/moonorange/gomicroservice/protogo/gen/genconnect"
 )
 
 func main() {
