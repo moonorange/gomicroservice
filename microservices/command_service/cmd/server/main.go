@@ -15,7 +15,7 @@ import (
 )
 
 func main() {
-	const host = "localhost:8081"
+	const host = "localhost:8082"
 
 	mux := http.NewServeMux()
 	path, handler := genconnect.NewTaskServiceHandler(&taskServer{})

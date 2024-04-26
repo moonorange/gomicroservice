@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "command_service.fullname" . }}
+  name: {{ .Values.name }}
   labels:
-    {{- include "command_service.labels" . | nindent 4 }}
+    {{ .Values.name }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -11,5 +11,3 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
-  selector:
-    {{- include "command_service.selectorLabels" . | nindent 4 }}

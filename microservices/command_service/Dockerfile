@@ -27,7 +27,7 @@ WORKDIR /app
 COPY --from=builder /app/command_service .
 
 # Expose the port on which the server will run
-EXPOSE 8080
+EXPOSE 8082
 
 # Command to run the application when starting the container
 CMD ["./command_service"] 

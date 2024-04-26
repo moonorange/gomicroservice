@@ -27,7 +27,7 @@ WORKDIR /app
 COPY --from=builder /app/query_service .
 
 # Expose the port on which the server will run
-EXPOSE 8080
+EXPOSE 8081
 
 # Command to run the application when starting the container
 CMD ["./query_service"] 

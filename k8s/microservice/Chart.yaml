@@ -1,6 +1,6 @@
 apiVersion: v2
-name: query_service
-description: A Helm chart for Kubernetes
+name: microservice
+description: A Helm chart for my microservice
 
 # A chart can be either an 'application' or a 'library' chart.
 #
