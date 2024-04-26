@@ -1,4 +1,4 @@
-name: command_service
+name: command-service
 group: microservice
 replicaCount: 1
 container:

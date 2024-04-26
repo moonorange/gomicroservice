@@ -1,4 +1,4 @@
-name: query_service
+name: query-service
 group: microservice
 replicaCount: 1
 container:
