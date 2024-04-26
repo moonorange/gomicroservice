@@ -1,5 +1,4 @@
 name: bff
-group: microservice
 replicaCount: 1
 container:
   image:
@@ -8,5 +7,5 @@ container:
     pullPolicy: IfNotPresent
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 8080

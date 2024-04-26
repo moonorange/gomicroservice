@@ -11,7 +11,7 @@ spec:
     metadata:
       labels:
         app: {{ .Values.name }}
-        group: {{ .Values.group }}
+        group: {{ .Values.name }}
     spec:
       containers:
         - name: bff

@@ -1,5 +1,4 @@
 name: query-service
-group: microservice
 replicaCount: 1
 container:
   image:
