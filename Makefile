@@ -23,9 +23,14 @@ minikube:
 	minikube start
 
 # Need to start minikube before deploying services
-deploy:
-	helm install -f bff.yaml bff ./microservice
-	helm install -f query-service.yaml query-service ./microservice
-	helm install -f command-service.yaml command-service ./microservice
+helm_install:
+	helm install -f k8s/bff.yaml bff ./k8s/microservice
+	helm install -f k8s/query-service.yaml query-service ./k8s/microservice
+	helm install -f k8s/command-service.yaml command-service ./k8s/microservice
+
+helm_uninstall:
+	helm uninstall bff
+	helm uninstall query-service
+	helm uninstall command-service
 
 .PHONY: build push_images build_push minikube deploy
