@@ -1,0 +1,12 @@
+name: command_service
+group: microservice
+replicaCount: 1
+container:
+  image:
+    repository: keigokida/gomicroservices
+    tag: command_service
+    pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8082

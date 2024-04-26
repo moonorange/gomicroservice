@@ -1,0 +1,12 @@
+name: query_service
+group: microservice
+replicaCount: 1
+container:
+  image:
+    repository: keigokida/gomicroservices
+    tag: query_service
+    pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8081

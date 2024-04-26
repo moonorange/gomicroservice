@@ -1,0 +1,12 @@
+name: bff
+group: microservice
+replicaCount: 1
+container:
+  image:
+    repository: keigokida/gomicroservices
+    tag: bff
+    pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080

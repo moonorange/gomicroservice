@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ .Values.name }}
   labels:
-    {{ .Values.name }}
+    group: {{ .Values.group }}
 spec:
   type: {{ .Values.service.type }}
   ports:
