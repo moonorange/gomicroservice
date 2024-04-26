@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: bff
-          image: "{{ .Values.container.image.image }}:{{ .Values.container.image.tag }}"
+          image: "{{ .Values.container.image.repository }}:{{ .Values.container.image.tag }}"
           imagePullPolicy: {{ .Values.container.image.pullPolicy }}
           ports:
             - name: http
