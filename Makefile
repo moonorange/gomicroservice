@@ -19,4 +19,13 @@ push_images:
 
 build_push: build push_images
 
-.PHONY: build push_images build_push
+minikube:
+	minikube start
+
+# Need to start minikube before deploying services
+deploy:
+	helm install -f bff.yaml bff ./microservice
+	helm install -f query-service.yaml query-service ./microservice
+	helm install -f command-service.yaml command-service ./microservice
+
+.PHONY: build push_images build_push minikube deploy
