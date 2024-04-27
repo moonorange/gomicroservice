@@ -4,8 +4,13 @@ container:
   image:
     repository: keigokida/gomicroservices
     tag: query_service
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
+  dns:
+    query: query-service
+    command: command-service
 
 service:
   type: ClusterIP
   port: 8081
+  queryPort: 8081
+  commandPort: 8082

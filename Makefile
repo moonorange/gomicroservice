@@ -5,9 +5,9 @@ COMMAND_IMAGE := command_service:latest
 DOCKERHUB_REPO := keigokida/gomicroservices
 
 build:
-	docker build -t $(BFF_IMAGE) ./bff
-	docker build -t $(QUERY_IMAGE) ./microservices/query_service
-	docker build -t $(COMMAND_IMAGE) ./microservices/command_service
+	docker build --no-cache -t $(BFF_IMAGE) ./bff
+	docker build --no-cache -t $(QUERY_IMAGE) ./microservices/query_service
+	docker build --no-cache -t $(COMMAND_IMAGE) ./microservices/command_service
 	docker tag $(BFF_IMAGE) $(DOCKERHUB_REPO):bff
 	docker tag $(QUERY_IMAGE) $(DOCKERHUB_REPO):query_service
 	docker tag $(COMMAND_IMAGE) $(DOCKERHUB_REPO):command_service
@@ -33,4 +33,6 @@ helm_uninstall:
 	helm uninstall query-service
 	helm uninstall command-service
 
-.PHONY: build push_images build_push minikube deploy
+helm_update: helm_uninstall helm_install
+
+.PHONY: build push_images build_push minikube helm_install helm_uninstall helm_update

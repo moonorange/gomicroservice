@@ -22,8 +22,8 @@ spec:
               protocol: TCP
           env:
             - name: PORT
-              value: {{ .Values.service.port }}
+              value: "{{ .Values.service.port }}"
             - name: QUERY_SERVICE_HOST
-              value: "{{ .Values.container.image.dns.query }}.default.svc.cluster.local:{{ .Values.service.queryPort }}"
+              value: "{{ .Values.container.dns.query }}.default.svc.cluster.local:{{ .Values.service.queryPort }}"
             - name: COMMAND_SERVICE_HOST
-              value: "{{ .Values.container.image.dns.command }}.default.svc.cluster.local::{{ .Values.service.commandPort }}"
+              value: "{{ .Values.container.dns.command }}.default.svc.cluster.local:{{ .Values.service.commandPort }}"

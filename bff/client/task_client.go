@@ -16,6 +16,7 @@ var (
 
 func NewQueryServiceClient() genconnect.TaskServiceClient {
 	queryHost := os.Getenv("QUERY_SERVICE_HOST")
+	logrus.Info("queryHost: ", queryHost)
 	if queryHost == "" {
 		logrus.Fatal("empty QUERY_SERVICE_HOST")
 	}
@@ -26,7 +27,7 @@ func NewQueryServiceClient() genconnect.TaskServiceClient {
 	}
 	queryClient = genconnect.NewTaskServiceClient(
 		http.DefaultClient,
-		queryHost,
+		"http://"+queryHost,
 		connect.WithGRPC(),
 	)
 
@@ -35,6 +36,7 @@ func NewQueryServiceClient() genconnect.TaskServiceClient {
 
 func NewCommandServiceClient() genconnect.TaskServiceClient {
 	commandHost := os.Getenv("COMMAND_SERVICE_HOST")
+	logrus.Info("commandHost: ", commandHost)
 	if commandHost == "" {
 		logrus.Fatal("empty COMMAND_SERVICE_HOST")
 	}
@@ -45,7 +47,7 @@ func NewCommandServiceClient() genconnect.TaskServiceClient {
 	// Create a gRPC client using the connect.WithGRPC() option
 	commandClient = genconnect.NewTaskServiceClient(
 		http.DefaultClient,
-		commandHost,
+		"http://"+commandHost,
 		connect.WithGRPC(),
 	)
 

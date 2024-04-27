@@ -33,12 +33,12 @@ func main() {
 	mux := http.NewServeMux()
 	path, handler := genconnect.NewTaskServiceHandler(&taskServer{})
 	mux.Handle(path, handler)
-	logrus.Println("... Listening on", host+":"+port)
+	logrus.Println("... Listening on", host)
 
 	eg := errgroup.Group{}
 	// Start the gRPC server
 	eg.Go(func() error { return http.ListenAndServe(":"+port, h2c.NewHandler(mux, &http2.Server{})) })
-	logrus.Printf("Query service is running on host %s", host+":"+port)
+	logrus.Printf("Query service is running on host %s", host)
 
 	err := eg.Wait()
 	if err != nil {

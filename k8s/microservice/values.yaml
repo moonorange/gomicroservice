@@ -6,6 +6,7 @@ name: microservice
 replicaCount: 1
 container:
   image:
+    # DockerHub Repository
     repository: keigokida/gomicroservices
     tag: microservice
     pullPolicy: IfNotPresent
