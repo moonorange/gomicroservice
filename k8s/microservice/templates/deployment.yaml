@@ -21,7 +21,9 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           env:
+            - name: PORT
+              value: {{ .Values.service.port }}
             - name: QUERY_SERVICE_HOST
-              value: "{{ .Values.queryService.host }}.default.svc.cluster.local"
+              value: "{{ .Values.container.image.dns.query }}.default.svc.cluster.local:{{ .Values.service.queryPort }}"
             - name: COMMAND_SERVICE_HOST
-              value: "{{ .Values.commandService.host }}.default.svc.cluster.local"
+              value: "{{ .Values.container.image.dns.command }}.default.svc.cluster.local::{{ .Values.service.commandPort }}"

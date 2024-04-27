@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"net/http"
+	"os"
 	"strconv"
 
 	"connectrpc.com/connect"
@@ -14,18 +15,30 @@ import (
 	"golang.org/x/sync/errgroup"
 )
 
+const (
+	defaultPort = "8081"
+	defaultHost = "localhost"
+)
+
 func main() {
-	const PORT = ":8082"
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = defaultPort
+	}
+	host := os.Getenv("COMMAND_SERVICE_HOST")
+	if host == "" {
+		host = defaultHost
+	}
 
 	mux := http.NewServeMux()
 	path, handler := genconnect.NewTaskServiceHandler(&taskServer{})
 	mux.Handle(path, handler)
-	logrus.Println("... Listening on", PORT)
+	logrus.Println("... Listening on", host+":"+port)
 
 	eg := errgroup.Group{}
 	// Start the gRPC server
-	eg.Go(func() error { return http.ListenAndServe(PORT, h2c.NewHandler(mux, &http2.Server{})) })
-	logrus.Printf("Query service is running on host %s", PORT)
+	eg.Go(func() error { return http.ListenAndServe(":"+port, h2c.NewHandler(mux, &http2.Server{})) })
+	logrus.Printf("Query service is running on host %s", host+":"+port)
 
 	err := eg.Wait()
 	if err != nil {

@@ -9,10 +9,15 @@ container:
     repository: keigokida/gomicroservices
     tag: microservice
     pullPolicy: IfNotPresent
+  dns:
+    query: query-service
+    command: command-service
 
 service:
   type: ClusterIP
   port: 8080
+  queryPort: 8081
+  commandPort: 8082
 
 ingress:
   enabled: false
@@ -24,3 +29,4 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: []
+
