@@ -15,17 +15,17 @@ import (
 )
 
 func main() {
-	const host = "localhost:8082"
+	const PORT = ":8082"
 
 	mux := http.NewServeMux()
 	path, handler := genconnect.NewTaskServiceHandler(&taskServer{})
 	mux.Handle(path, handler)
-	logrus.Println("... Listening on", host)
+	logrus.Println("... Listening on", PORT)
 
 	eg := errgroup.Group{}
 	// Start the gRPC server
-	eg.Go(func() error { return http.ListenAndServe(host, h2c.NewHandler(mux, &http2.Server{})) })
-	logrus.Printf("Command service is running on host %s", host)
+	eg.Go(func() error { return http.ListenAndServe(PORT, h2c.NewHandler(mux, &http2.Server{})) })
+	logrus.Printf("Command service is running on host %s", PORT)
 
 	err := eg.Wait()
 	if err != nil {

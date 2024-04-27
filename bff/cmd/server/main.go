@@ -1,11 +1,11 @@
 package main
 
 import (
-	"log"
 	"net/http"
 	"os"
 
 	"github.com/moonorange/gomicroservice/bff/graph"
+	"github.com/sirupsen/logrus"
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
@@ -24,6 +24,6 @@ func main() {
 	http.Handle("/", playground.Handler("GraphQL playground", "/query"))
 	http.Handle("/query", srv)
 
-	log.Printf("connect to http://localhost:%s/ for GraphQL playground", port)
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	logrus.Printf("connect to :%s/ for GraphQL playground", port)
+	logrus.Fatal(http.ListenAndServe(":"+port, nil))
 }

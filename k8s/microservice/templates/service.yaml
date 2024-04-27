@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ .Values.name }}
   labels:
-    group: {{ .Values.name }}
+    app: {{ .Values.name }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -11,3 +11,5 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+  selector:
+    app: {{ .Values.name }}

@@ -6,6 +6,7 @@ require (
 	connectrpc.com/connect v1.16.1
 	github.com/99designs/gqlgen v0.17.45
 	github.com/moonorange/gomicroservice/protogo v0.0.0-20240424141032-8ae6af1b12ee
+	github.com/sirupsen/logrus v1.9.3
 	github.com/vektah/gqlparser/v2 v2.5.11
 )
 
@@ -21,6 +22,7 @@ require (
 	github.com/urfave/cli/v2 v2.27.1 // indirect
 	github.com/xrash/smetrics v0.0.0-20201216005158-039620a65673 // indirect
 	golang.org/x/mod v0.16.0 // indirect
+	golang.org/x/sys v0.18.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/tools v0.19.0 // indirect
 	google.golang.org/protobuf v1.33.0 // indirect
