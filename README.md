@@ -8,4 +8,4 @@ For detailed explanations, check out the accompanying blog posts [here](https://
 
 ## Project Structure
 
-![Project Structure](./assets/project_arch.png)
+![Project Structure](./project_arch.png)
