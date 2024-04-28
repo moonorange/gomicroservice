@@ -11,5 +11,7 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+  {% comment %} The selector in the Service is a set of key-value pairs that determine which Pods should receive traffic from the Service.
+  In this case, the Service will route traffic to Pods with the label app set to the value of {{ .Values.name }}. {% endcomment %}
   selector:
     app: {{ .Values.name }}

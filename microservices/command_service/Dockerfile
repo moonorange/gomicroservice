@@ -17,7 +17,7 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflags "-static"' -o command_service ./cmd/server
 
 # Start a new stage from scratch for multi-stage builds.
-# This is to reduce the finale docker image size and to isolate build depencies
+# This is to reduce the finale docker image size and to isolate build dependencies
 FROM alpine:latest
 
 # Set the current working directory inside the container

@@ -25,7 +25,7 @@ func main() {
 	if port == "" {
 		port = defaultPort
 	}
-	host := os.Getenv("COMMAND_SERVICE_HOST")
+	host := os.Getenv("QUERY_SERVICE_HOST")
 	if host == "" {
 		host = defaultHost
 	}

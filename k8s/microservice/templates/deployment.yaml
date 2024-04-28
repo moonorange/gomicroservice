@@ -3,14 +3,19 @@ kind: Deployment
 metadata:
   name: {{ .Values.name }}
 spec:
+  {% comment %} This line specifies the desired number of replicas (pods) for the Deployment {% endcomment %}
   replicas: {{ .Values.replicaCount }}
+  {% comment %} The selector defines how the Deployment finds the pods it manages. {% endcomment %}
   selector:
     matchLabels:
       app: {{ .Values.name }}
+  {% comment %} This section defines the template for the pods that the Deployment will create and manage.
+  The labels defined here will be applied to the pods. {% endcomment %}
   template:
     metadata:
       labels:
         app: {{ .Values.name }}
+    {% comment %} This section defines the container(s) that will run in the pods managed by the Deployment. {% endcomment %}
     spec:
       containers:
         - name: bff
@@ -20,6 +25,7 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          {% comment %} env variables {% endcomment %}
           env:
             - name: PORT
               value: "{{ .Values.service.port }}"
