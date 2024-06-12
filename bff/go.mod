@@ -7,7 +7,7 @@ require (
 	github.com/99designs/gqlgen v0.17.45
 	github.com/moonorange/gomicroservice/protogo v0.0.0-20240424141032-8ae6af1b12ee
 	github.com/sirupsen/logrus v1.9.3
-	github.com/vektah/gqlparser/v2 v2.5.11
+	github.com/vektah/gqlparser/v2 v2.5.14
 )
 
 require (
